@@ -19,9 +19,11 @@ const page = () => {
   const [user] = useAuthState(auth);
   const router = useRouter()
 
-  if (!user ){
-    router.push('/signin')
-  }
+  useEffect(()=>{
+    if (!user ){
+      router.push('/signin')
+    }
+  },[])
 
   const { trending } = useContext(AppContext);
   const [hasMore, setHasMore] = useState(true);
@@ -34,7 +36,7 @@ const page = () => {
 
     try {
 
-      const data = await axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=yTbYS3FsMkCfiiofE4FTJAhf0zpELxYK&limit=25&offset=${globalData.length}&rating=g&bundle=messaging_non_clips`)
+      const data = await axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=PJMKhwTk2h4HZsR3LqGX2WRHo1g9C8oe&limit=25&offset=${globalData.length}&rating=g&bundle=messaging_non_clips`)
 
 
 
