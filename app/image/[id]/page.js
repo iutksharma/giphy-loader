@@ -17,7 +17,7 @@ const Image = () => {
 
     async function getSingleImage() {
         try {
-            const { data } = await axios.get(`https://api.giphy.com/v1/gifs/${id}?api_key=yTbYS3FsMkCfiiofE4FTJAhf0zpELxYK&rating=g`);
+            const { data } = await axios.get(`https://api.giphy.com/v1/gifs/${id}?api_key=PJMKhwTk2h4HZsR3LqGX2WRHo1g9C8oe&rating=g`);
 
 
             setSingleImage(data);
