@@ -22,7 +22,7 @@ const search = ({ params }) => {
 
     async function getSearchedImages(e) {
         try {
-            let  data  = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=yTbYS3FsMkCfiiofE4FTJAhf0zpELxYK&q=${searchQuery}&limit=25&offset=${searchResult.length}&rating=g&lang=en&bundle=messaging_non_clips`)
+            let  data  = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=PJMKhwTk2h4HZsR3LqGX2WRHo1g9C8oe&q=${searchQuery}&limit=25&offset=${searchResult.length}&rating=g&lang=en&bundle=messaging_non_clips`)
 
             data.data.data.length === 0 ? sethasMore(false) : "";
             setsearchResult([...searchResult, ...data.data.data])
