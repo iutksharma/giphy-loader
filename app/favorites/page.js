@@ -19,9 +19,11 @@ const page = () => {
     const [user] = useAuthState(auth);
   const router = useRouter()
 
-  if (!user ){
-    router.push('/signin')
-  }
+  useEffect(()=>{
+    if (!user ){
+      router.push('/signin')
+    }
+  },[])
 
     useEffect(() => {
         const fetchFavoriteGIFs = async () => {
@@ -34,7 +36,7 @@ const page = () => {
 
                 // Make the API call only if there are IDs in favorites
                 if (idsString) {
-                  const response = await axios.get(`https://api.giphy.com/v1/gifs?api_key=yTbYS3FsMkCfiiofE4FTJAhf0zpELxYK&ids=${idsString}&rating=g`);
+                  const response = await axios.get(`https://api.giphy.com/v1/gifs?api_key=PJMKhwTk2h4HZsR3LqGX2WRHo1g9C8oe&ids=${idsString}&rating=g`);
                   
                   setfav([...response.data.data])
                   
